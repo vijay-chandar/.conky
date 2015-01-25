@@ -38,10 +38,10 @@ TEXT
 #${voffset 20}${font Ubuntu:size=38}${time %I : %M : %S}
 ${voffset 20}${color #717c75}${font Ubuntu:size=6}Cpu
 ${execbar}
-${voffset 10}${cpugraph cpu0 55,250 9baaa0 9baaa0}
 ${voffset 10}${cpugraph cpu1 55,250 9baaa0 9baaa0}
 ${voffset 10}${cpugraph cpu2 55,250 9baaa0 9baaa0}
 ${voffset 10}${cpugraph cpu3 55,250 9baaa0 9baaa0}
+${voffset 10}${cpugraph cpu4 55,250 9baaa0 9baaa0}
 ${color #717c75}${font Ubuntu:size=6}Mem
 ${execbar}
 ${voffset 10}${memgraph 55,250 9baaa0 9baaa0}
