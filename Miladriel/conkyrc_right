@@ -1,0 +1,89 @@
+# - Conky settings - #
+update_interval 1
+total_run_times 0
+net_avg_samples 1
+cpu_avg_samples 1
+
+imlib_cache_size 0
+double_buffer yes
+no_buffers yes
+format_human_readable
+draw_graph_borders no
+
+# - Text settings - #
+use_xft yes
+xftfont Ubuntu:size=7
+override_utf8_locale yes
+text_buffer_size 2048
+
+# - Window specifications - #
+own_window yes
+own_window_argb_visual true
+own_window_argb_value 255
+own_window_transparent yes
+own_window_type normal
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+# - Graphics settings - #
+draw_shades no
+default_bar_size 270 0
+default_color 6D6D6D        
+alignment top_right
+gap_x 0
+gap_y 0
+minimum_size 290 1080
+maximum_width 1920
+
+TEXT
+# - Ethernet - #
+${voffset 40}${color #717c75}${font Ubuntu:size=6}Download${goto 250}Upload
+${execbar}
+${downspeedgraph enp2s0 30,100 9baaa0 9baaa0}${goto 150}${upspeedgraph enp2s0 30,100 9baaa0 9baaa0}
+
+${color #717c75}${font Ubuntu:size=6}ETHERNET${goto 250}IP ADDR${font}
+${execbar}
+
+# - Astro Infos - #
+${execp ~/.scripts/astro_neo.sh} 
+${font Ubuntu:size=7}
+${voffset 3}${goto 90}${color #9baaa0}${font Ubuntu:size=7}Local${goto 160}|${goto 190}${addr enp2s0}
+${voffset 3}${goto 90}Host${goto 160}| ${goto 190}${nodename}
+${voffset 3}${goto 90}Kernel${goto 160}| ${goto 190}${kernel}
+${voffset 3}${goto 90}${uptime}${goto 160}| ${goto 190}${time  %A}
+
+${color #717c75}${font Ubuntu:size=6}GPU${goto 240}INFOS${font}
+${execbar}${color #9baaa0}
+${voffset 10}${execi 1000 lspci | grep VGA | awk '{print $8,$9,$10,$11}' | cut -f2 -d"[" | cut -f1 -d"]"} ${goto 90}${nvidia gpufreq} Mhz
+Memory: ${goto 90}${nvidia memfreq} Mhz
+Temp: ${goto 90}${nvidia temp} °C
+Fan Speed: ${goto 90}${execi 5 nvidia-settings -q [fan:0]/GPUCurrentFanSpeed -t} %
+
+# - Disks - #
+${voffset 0}${color #717c75}${font Ubuntu:size=6}DISKS${goto 240}CAPACITY${font}
+${execbar}
+
+${voffset 3}${goto 10}${color #9baaa0}${font Ubuntu:size=7}Root:${goto 120}${fs_bar 6,150 /}
+${voffset 3}${goto 10}${color #9baaa0}${font Ubuntu:size=7}Home:${goto 120}${fs_bar 6,150 /home}
+#${voffset 3}${goto 10}${color #9baaa0}${font Ubuntu:size=7}External:${goto 120}${fs_bar 6,150 /run/media/yanice/2235-37D0/}
+
+${color #717c75}${font Ubuntu:size=6}DISK${goto 255}USAGE${font}
+${execbar}
+${diskiograph 65,250 9baaa0 9baaa0}
+
+${color #717c75}${font Ubuntu:size=6}MPD${goto 220}NOW PLAYNG${font}
+${execbar}
+${if_running mpd}
+$mpd_smart
+$mpd_album
+Bitrate $mpd_bitrate kbits/s
+
+${goto 100}$mpd_status $mpd_elapsed/$mpd_length
+
+${goto 30}${mpd_bar 4,220}
+
+${voffset 140}${goto 200}Windows
+
+${goto 110}Win+Left  ${goto 180}: ${goto 200} Tile Left
+${goto 110}Win+Right ${goto 180}: ${goto 200} Tile Right
+${goto 110}Win+Top   ${goto 180}: ${goto 200} Maximize
+${goto 110}Win+Down  ${goto 180}: ${goto 200} Unmaximize

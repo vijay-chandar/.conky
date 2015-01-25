@@ -1,0 +1,80 @@
+# - Conky settings - #
+update_interval 1
+total_run_times 0
+net_avg_samples 1
+cpu_avg_samples 1
+
+imlib_cache_size 0
+double_buffer yes
+no_buffers yes
+format_human_readable
+draw_graph_borders no
+
+# - Text settings - #
+use_xft yes
+xftfont Ubuntu:size=7
+override_utf8_locale yes
+text_buffer_size 2048
+
+# - Window specifications - #
+own_window yes
+own_window_argb_visual true
+own_window_argb_value 255
+own_window_transparent yes
+own_window_type normal
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+# - Graphics settings - #
+draw_shades no
+default_color 6D6D6D        
+default_bar_size 270 0
+alignment top_left
+gap_x 5
+gap_y 0
+minimum_size 300 1080
+maximum_width 1920
+
+TEXT
+#${voffset 20}${font Ubuntu:size=38}${time %I : %M : %S}
+${voffset 20}${color #717c75}${font Ubuntu:size=6}Cpu
+${execbar}
+${voffset 10}${cpugraph cpu0 55,250 9baaa0 9baaa0}
+${voffset 10}${cpugraph cpu1 55,250 9baaa0 9baaa0}
+${voffset 10}${cpugraph cpu2 55,250 9baaa0 9baaa0}
+${voffset 10}${cpugraph cpu3 55,250 9baaa0 9baaa0}
+${color #717c75}${font Ubuntu:size=6}Mem
+${execbar}
+${voffset 10}${memgraph 55,250 9baaa0 9baaa0}
+
+${voffset 10}${color #717c75}${font Ubuntu:size=6}PROCESSES${goto 240}TOP USAGE${font}
+${execbar}
+
+# - CPU  - #
+${goto 10} ${font Ubuntu:size=7}${color #717c75} NAME ${goto 140} CPU%   ${goto 180}MEM%${goto 220}${font Ubuntu:size=7}  PID
+${font Ubuntu:size=7}
+${goto 15} ${color #9baaa0}${top name 1}    ${goto 140}${top cpu 1}    ${goto 180}${top mem 1}    ${goto 220}${top pid 1}
+${goto 15} ${color #9baaa0}${top name 2}    ${goto 140}${top cpu 2}    ${goto 180}${top mem 2}    ${goto 220}${top pid 2} 
+${goto 15} ${color #9baaa0}${top name 3}    ${goto 140}${top cpu 3}    ${goto 180}${top mem 3}    ${goto 220}${top pid 3}
+${goto 15} ${color #9baaa0}${top name 4}    ${goto 140}${top cpu 4}    ${goto 180}${top mem 4}    ${goto 220}${top pid 4}
+${goto 15} ${color #9baaa0}${top name 5}    ${goto 140}${top cpu 5}    ${goto 180}${top mem 5}    ${goto 220}${top pid 5}
+${goto 15} ${color #9baaa0}${top name 6}    ${goto 140}${top cpu 6}    ${goto 180}${top mem 6}    ${goto 220}${top pid 6}
+
+# - MEM  - #
+${goto 10} ${font Ubuntu:size=7}${color #717c75} NAME     ${goto 140} CPU%  ${goto 180}${font Sans:size=7}MEM%${goto 220}${font Ubuntu:size=7}  PID
+${font Ubuntu:size=7}
+${goto 15} ${color #9baaa0}${top_mem name 1}    ${goto 140}${top_mem cpu 1}    ${goto 180}${top_mem mem 1}    ${goto 220}${top_mem pid 1}
+${goto 15} ${color #9baaa0}${top_mem name 2}    ${goto 140}${top_mem cpu 2}    ${goto 180}${top_mem mem 2}    ${goto 220}${top_mem pid 2}
+${goto 15} ${color #9baaa0}${top_mem name 3}    ${goto 140}${top_mem cpu 3}    ${goto 180}${top_mem mem 3}    ${goto 220}${top_mem pid 3}
+${goto 15} ${color #9baaa0}${top_mem name 4}    ${goto 140}${top_mem cpu 4}    ${goto 180}${top_mem mem 4}    ${goto 220}${top_mem pid 4}
+${goto 15} ${color #9baaa0}${top_mem name 5}    ${goto 140}${top_mem cpu 5}    ${goto 180}${top_mem mem 5}    ${goto 220}${top_mem pid 5}
+${goto 15} ${color #9baaa0}${top_mem name 6}    ${goto 140}${top_mem cpu 6}    ${goto 180}${top_mem mem 6}    ${goto 220}${top_mem pid 6}
+
+${voffset 140}Applications
+
+${goto 10}Alt+f ${goto 80}: ${goto 100} Web
+${goto 10}Alt+n ${goto 80}: ${goto 100} Files
+${goto 10}Alt+p ${goto 80}: ${goto 100} Popcorn
+${goto 10}Alt+t ${goto 80}: ${goto 100} Television
+${goto 10}Alt+r ${goto 80}: ${goto 100} Launcher
+${goto 10}Alt+i ${goto 80}: ${goto 100} IRC
+

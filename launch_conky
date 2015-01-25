@@ -1,0 +1,19 @@
+#!/bin/zsh
+killall -9 conky
+#################
+# Top Bar (top) #
+#################
+conky -d -c ~/.conky/Miladriel/conkyrc &
+#######################
+# Conky Stocks (left) #
+#######################
+conky -d -c ~/.conky/Miladriel/conkyrc_left &
+#####################
+# Conky Mix (right) #
+#####################
+conky -d -c ~/.conky/Miladriel/conkyrc_right &
+###########################
+# Conky Calendar (bottom) #
+###########################
+conky -c ~/.conky/calendar_extra/start_conky &
+
