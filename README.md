@@ -6,30 +6,31 @@ called dex-ui.
 
 To use this conky you have to copy it into your .conky folder under your home directory
 
-If the .conky folder exists:
+### If the .conky folder exists:
 
 Type the command:
 
 cd ~/.conky
 
-If the .conky folder does not exist:
+### If the .conky folder does not exist:
 
 Type the following commands:
 
 mkdir ~/.conky
+
 cd ~/.conky
 
 
 
 After that you have to clone this git repo or download the content via the download link:
 
-With the git command:
+### With the git command:
 
 git clone https://github.com/yanice/.conky.git
 
 
 
-With the wget command:
+### With the wget command:
 
 wget https://github.com/yanice/.conky/archive/master.zip
 
