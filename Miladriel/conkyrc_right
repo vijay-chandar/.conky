@@ -64,7 +64,6 @@ ${execbar}
 
 ${voffset 3}${goto 10}${color #9baaa0}${font Ubuntu:size=7}Root:${goto 120}${fs_bar 6,150 /}
 ${voffset 3}${goto 10}${color #9baaa0}${font Ubuntu:size=7}Home:${goto 120}${fs_bar 6,150 /home}
-#${voffset 3}${goto 10}${color #9baaa0}${font Ubuntu:size=7}External:${goto 120}${fs_bar 6,150 /run/media/yanice/2235-37D0/}
 
 ${color #717c75}${font Ubuntu:size=6}DISK${goto 255}USAGE${font}
 ${execbar}
