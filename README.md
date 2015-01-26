@@ -1,7 +1,8 @@
-# .conky
-# Just my conky configuration to reproduce the dex-miladriel-ui conky setup
-# This work was inspired by seenaburns and his amazing ui futuristic desktop 
-# called dex-ui
+# README
+
+Just my conky configuration to reproduce the dex-miladriel-ui conky setup
+This work was inspired by seenaburns and his amazing ui futuristic desktop 
+called dex-ui
 
 To use this conky you have to copy it into your .conky folder under your home directory
 
