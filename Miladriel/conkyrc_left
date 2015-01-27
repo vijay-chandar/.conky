@@ -68,13 +68,20 @@ ${goto 15} ${color #9baaa0}${top_mem name 3}    ${goto 140}${top_mem cpu 3}    $
 ${goto 15} ${color #9baaa0}${top_mem name 4}    ${goto 140}${top_mem cpu 4}    ${goto 180}${top_mem mem 4}    ${goto 220}${top_mem pid 4}
 ${goto 15} ${color #9baaa0}${top_mem name 5}    ${goto 140}${top_mem cpu 5}    ${goto 180}${top_mem mem 5}    ${goto 220}${top_mem pid 5}
 ${goto 15} ${color #9baaa0}${top_mem name 6}    ${goto 140}${top_mem cpu 6}    ${goto 180}${top_mem mem 6}    ${goto 220}${top_mem pid 6}
+${font Ubuntu:size=8}
+${voffset 100}${goto 10}WINDOWS
 
-${voffset 140}Applications
+${goto 15}Win+Left  ${goto 75}: ${goto 100} Tile Left
+${goto 15}Win+Right ${goto 75}: ${goto 100} Tile Right
+${goto 15}Win+Top   ${goto 75}: ${goto 100} Maximize
+${goto 15}Win+Down  ${goto 75}: ${goto 100} Unmaximize
 
-${goto 10}Alt+f ${goto 80}: ${goto 100} Web
-${goto 10}Alt+n ${goto 80}: ${goto 100} Files
-${goto 10}Alt+p ${goto 80}: ${goto 100} Popcorn
-${goto 10}Alt+t ${goto 80}: ${goto 100} Television
-${goto 10}Alt+r ${goto 80}: ${goto 100} Launcher
-${goto 10}Alt+i ${goto 80}: ${goto 100} IRC
+${goto 10}APPLICATIONS
 
+${goto 15}Alt + F  ${goto 75}: ${goto 100} Web Browser (Firefox)
+${goto 15}Alt + G  ${goto 75}: ${goto 100} Web Browser (Chromium)
+${goto 15}Alt + I  ${goto 75}: ${goto 100} \#IRC
+${goto 15}Alt + N  ${goto 75}: ${goto 100} File Manager
+${goto 15}Alt + P  ${goto 75}: ${goto 100} Popcorn Time
+${goto 15}Alt + R  ${goto 75}: ${goto 100} Launcher (Synapse)
+${goto 15}Alt + T  ${goto 75}: ${goto 100} Television

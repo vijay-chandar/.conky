@@ -18,7 +18,7 @@ transparency = 0.20 -- From 0 to 1
 
 -- Scaled relative position from middle. Positive x and y means left and up, negative x and y means right and down.
 x_rel_pos = 0
-y_rel_pos = 400
+y_rel_pos = 550
 
 require 'cairo'
 

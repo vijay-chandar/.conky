@@ -44,7 +44,7 @@ ${color #717c75}${font Ubuntu:size=6}ETHERNET${goto 250}IP ADDR${font}
 ${execbar}
 
 # - Astro Infos - #
-${execp ~/.scripts/astro_neo.sh} 
+${execp ~/.conky/.scripts/astro_neo.sh} 
 ${font Ubuntu:size=7}
 ${voffset 3}${goto 90}${color #9baaa0}${font Ubuntu:size=7}Local${goto 160}|${goto 190}${addr enp2s0}
 ${voffset 3}${goto 90}Host${goto 160}| ${goto 190}${nodename}
@@ -79,10 +79,3 @@ Bitrate $mpd_bitrate kbits/s
 ${goto 100}$mpd_status $mpd_elapsed/$mpd_length
 
 ${goto 30}${mpd_bar 4,220}
-
-${voffset 140}${goto 200}Windows
-
-${goto 110}Win+Left  ${goto 180}: ${goto 200} Tile Left
-${goto 110}Win+Right ${goto 180}: ${goto 200} Tile Right
-${goto 110}Win+Top   ${goto 180}: ${goto 200} Maximize
-${goto 110}Win+Down  ${goto 180}: ${goto 200} Unmaximize
