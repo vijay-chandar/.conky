@@ -71,17 +71,17 @@ ${goto 15} ${color #9baaa0}${top_mem name 6}    ${goto 140}${top_mem cpu 6}    $
 ${font Ubuntu:size=8}
 ${voffset 100}${goto 10}WINDOWS
 
-${goto 15}Win+Left  ${goto 75}: ${goto 100} Tile Left
-${goto 15}Win+Right ${goto 75}: ${goto 100} Tile Right
-${goto 15}Win+Top   ${goto 75}: ${goto 100} Maximize
-${goto 15}Win+Down  ${goto 75}: ${goto 100} Unmaximize
+${voffset 3}${goto 15}Win+Left  ${goto 75}: ${goto 100} Tile Left
+${voffset 3}${goto 15}Win+Right ${goto 75}: ${goto 100} Tile Right
+${voffset 3}${goto 15}Win+Top   ${goto 75}: ${goto 100} Maximize
+${voffset 3}${goto 15}Win+Down  ${goto 75}: ${goto 100} Unmaximize
 
 ${goto 10}APPLICATIONS
 
 ${goto 15}Alt + F  ${goto 75}: ${goto 100} Web Browser (Firefox)
-${goto 15}Alt + G  ${goto 75}: ${goto 100} Web Browser (Chromium)
-${goto 15}Alt + I  ${goto 75}: ${goto 100} \#IRC
-${goto 15}Alt + N  ${goto 75}: ${goto 100} File Manager
-${goto 15}Alt + P  ${goto 75}: ${goto 100} Popcorn Time
-${goto 15}Alt + R  ${goto 75}: ${goto 100} Launcher (Synapse)
-${goto 15}Alt + T  ${goto 75}: ${goto 100} Television
+${voffset 3}${goto 15}Alt + G  ${goto 75}: ${goto 100} Web Browser (Chromium)
+${voffset 3}${goto 15}Alt + I  ${goto 75}: ${goto 100} \#IRC
+${voffset 3}${goto 15}Alt + N  ${goto 75}: ${goto 100} File Manager
+${voffset 3}${goto 15}Alt + P  ${goto 75}: ${goto 100} Popcorn Time
+${voffset 3}${goto 15}Alt + R  ${goto 75}: ${goto 100} Launcher (Synapse)
+${voffset 3}${goto 15}Alt + T  ${goto 75}: ${goto 100} Television

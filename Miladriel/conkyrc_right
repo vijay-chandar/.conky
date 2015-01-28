@@ -36,7 +36,7 @@ maximum_width 1920
 
 TEXT
 # - Ethernet - #
-${voffset 40}${color #717c75}${font Ubuntu:size=6}Download${goto 250}Upload
+${voffset 20}${color #717c75}${font Ubuntu:size=6}Download${goto 250}Upload
 ${execbar}
 ${downspeedgraph enp2s0 30,100 9baaa0 9baaa0}${goto 150}${upspeedgraph enp2s0 30,100 9baaa0 9baaa0}
 
@@ -79,3 +79,16 @@ Bitrate $mpd_bitrate kbits/s
 ${goto 100}$mpd_status $mpd_elapsed/$mpd_length
 
 ${goto 30}${mpd_bar 4,220}
+${font Ubuntu:size=8}
+${voffset 150}${goto 150}TODO LIST
+
+${voffset 3}${goto 150}Java tutorial
+${voffset 3}${goto 150}Python tutorial
+${voffset 3}${goto 150}Ruby tutorial
+${voffset 3}${goto 150}Supermarket
+${voffset 3}${goto 150}SAP HANA
+${voffset 3}${goto 150}Resumé on indeed
+
+${voffset 3}${goto 150}Help Émilie (Agreg)
+${voffset 3}${goto 150}Call mom
+
