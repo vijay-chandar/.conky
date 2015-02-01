@@ -1,4 +1,6 @@
+######################
 # - Conky settings - #
+######################
 update_interval 1
 total_run_times 0
 net_avg_samples 1
@@ -10,33 +12,42 @@ no_buffers yes
 format_human_readable
 draw_graph_borders no
 
+#####################
 # - Text settings - #
+#####################
 use_xft yes
-xftfont Ubuntu:size=7
+xftfont Ubuntu:size=8
 override_utf8_locale yes
 text_buffer_size 2048
 
+#############################
 # - Window specifications - #
+#############################
 own_window yes
 own_window_argb_visual true
-own_window_argb_value 255
-own_window_transparent yes
-own_window_type normal
+own_window_argb_value 80
+own_window_transparent no
+own_window_color 000000
+own_window_type desktop
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 
-# - Graphics settings - #
-draw_shades no
-default_bar_size 270 0
-default_color 6D6D6D        
 alignment top_right
-gap_x 0
-gap_y 0
-minimum_size 290 1080
-maximum_width 1920
+gap_x 5
+gap_y 50
+minimum_size 300 1020
+maximum_width 500
+default_bar_size 290 0
+
+#############
+# - Graphics settings - #
+#############
+draw_shades no
+
+default_color 6D6D6D             
 
 TEXT
 # - Ethernet - #
-${voffset 20}${color #717c75}${font Ubuntu:size=6}Download${goto 250}Upload
+${color #717c75}${font Ubuntu:size=6}Download${goto 250}Upload
 ${execbar}
 ${downspeedgraph enp2s0 30,100 9baaa0 9baaa0}${goto 150}${upspeedgraph enp2s0 30,100 9baaa0 9baaa0}
 
@@ -53,10 +64,10 @@ ${voffset 3}${goto 90}${uptime}${goto 160}| ${goto 190}${time  %A}
 
 ${color #717c75}${font Ubuntu:size=6}GPU${goto 240}INFOS${font}
 ${execbar}${color #9baaa0}
-${voffset 10}${execi 1000 lspci | grep VGA | awk '{print $8,$9,$10,$11}' | cut -f2 -d"[" | cut -f1 -d"]"} ${goto 90}${nvidia gpufreq} Mhz
-Memory: ${goto 90}${nvidia memfreq} Mhz
-Temp: ${goto 90}${nvidia temp} °C
-Fan Speed: ${goto 90}${execi 5 nvidia-settings -q [fan:0]/GPUCurrentFanSpeed -t} %
+${voffset 10}${execi 1000 lspci | grep VGA | awk '{print $8,$9,$10,$11}' | cut -f2 -d"[" | cut -f1 -d"]"} ${goto 150}${nvidia gpufreq} Mhz
+Memory: ${goto 150}${nvidia memfreq} Mhz
+Temp: ${goto 150}${nvidia temp} °C
+Fan Speed: ${goto 150}${execi 5 nvidia-settings -q [fan:0]/GPUCurrentFanSpeed -t} %
 
 # - Disks - #
 ${voffset 0}${color #717c75}${font Ubuntu:size=6}DISKS${goto 240}CAPACITY${font}

@@ -24,15 +24,18 @@ text_buffer_size 2048
 # - Window specifications - #
 #############################
 own_window yes
+own_window_argb_visual true
+own_window_argb_value 80
+own_window_transparent no
+own_window_color 000000
 own_window_type override
-own_window_class normal
-own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 
 alignment top_left
 gap_x 5
 gap_y 0
-minimum_size 1920 1080
-maximum_width 1920
+minimum_size 1915 40
+maximum_width 1915
 default_bar_size 290 0
 
 #############
@@ -43,11 +46,7 @@ draw_shades no
 default_color 6D6D6D             
 
 TEXT
-##########
-# - Clock Center - #
-##########
-${voffset 3}${goto 670}${color #717c75}Cpu: ${color #9baaa0}${cpu}% ($freq_g GHz)${color #717c75} | Mem: ${color #9baaa0}${mem} ${color #717c75} | ${color #717c75} Nvidia: ${color #9baaa0}${nvidia temp}°C ${color #717c75} | Cpu T°:${color #9baaa0} ${hwmon temp 1}°C ${color #717c75} | Net: ${color #9baaa0} ${totaldown enp2s0} downloaded ${color #717c75} | ${color #717c75}Root: ${color #9baaa0}${fs_free /} ${color #717c75} ${goto 1810}${voffset -7}
+${color #717c75}${goto 670}Cpu: ${color #9baaa0}${cpu}% ($freq_g GHz)${color #717c75} | Mem: ${color #9baaa0}${mem} ${color #717c75} | ${color #717c75} Nvidia: ${color #9baaa0}${nvidia temp}°C ${color #717c75} | Cpu T°:${color #9baaa0} ${hwmon temp 1}°C ${color #717c75} | Net: ${color #9baaa0} ${totaldown enp2s0} downloaded ${color #717c75} | ${color #717c75}Root: ${color #9baaa0}${fs_free /} ${color #717c75} ${goto 1810}${voffset -7}
 ${hr 1}
-${color #717c75}${font Ubuntu:size=6} SYSTEM ${goto 250}ALT PANEL${goto 1620}NETWORK${goto 1875}ALT PANEL
-${execbar}${goto 1620}${execbar}
-
+${color #717c75}${font Ubuntu:size=6} SYSTEM ${goto 250}ALT PANEL${goto 1610}NETWORK${goto 1875}ALT PANEL
+${execbar}${goto 1610}${execbar}

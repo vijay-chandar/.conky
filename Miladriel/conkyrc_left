@@ -1,4 +1,6 @@
+######################
 # - Conky settings - #
+######################
 update_interval 1
 total_run_times 0
 net_avg_samples 1
@@ -10,64 +12,72 @@ no_buffers yes
 format_human_readable
 draw_graph_borders no
 
+#####################
 # - Text settings - #
+#####################
 use_xft yes
-xftfont Ubuntu:size=7
+xftfont Ubuntu:size=8
 override_utf8_locale yes
 text_buffer_size 2048
 
+#############################
 # - Window specifications - #
+#############################
 own_window yes
 own_window_argb_visual true
-own_window_argb_value 255
-own_window_transparent yes
-own_window_type normal
+own_window_argb_value 80
+own_window_transparent no
+own_window_color 000000
+own_window_type desktop
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 
-# - Graphics settings - #
-draw_shades no
-default_color 6D6D6D        
-default_bar_size 270 0
 alignment top_left
 gap_x 5
-gap_y 0
-minimum_size 300 1080
-maximum_width 1920
+gap_y 50
+minimum_size 300 1020
+maximum_width 500
+default_bar_size 290 0
+
+#############
+# - Graphics settings - #
+#############
+draw_shades no
+
+default_color 6D6D6D             
 
 TEXT
-#${voffset 20}${font Ubuntu:size=38}${time %I : %M : %S}
-${voffset 20}${color #717c75}${font Ubuntu:size=6}Cpu
+${color #717c75}${font Ubuntu:size=6}Cpu
 ${execbar}
-${voffset 10}${cpugraph cpu1 55,250 9baaa0 9baaa0}
-${voffset 10}${cpugraph cpu2 55,250 9baaa0 9baaa0}
-${voffset 10}${cpugraph cpu3 55,250 9baaa0 9baaa0}
-${voffset 10}${cpugraph cpu4 55,250 9baaa0 9baaa0}
+${voffset 10}${cpugraph cpu1 55,270 9baaa0 9baaa0}
+${voffset 10}${cpugraph cpu2 55,270 9baaa0 9baaa0}
+${voffset 10}${cpugraph cpu3 55,270 9baaa0 9baaa0}
+${voffset 10}${cpugraph cpu4 55,270 9baaa0 9baaa0}
 ${color #717c75}${font Ubuntu:size=6}Mem
 ${execbar}
-${voffset 10}${memgraph 55,250 9baaa0 9baaa0}
+${voffset 10}${memgraph 55,270 9baaa0 9baaa0}
 
 ${voffset 10}${color #717c75}${font Ubuntu:size=6}PROCESSES${goto 240}TOP USAGE${font}
 ${execbar}
 
 # - CPU  - #
-${goto 10} ${font Ubuntu:size=7}${color #717c75} NAME ${goto 140} CPU%   ${goto 180}MEM%${goto 220}${font Ubuntu:size=7}  PID
+${goto 10} ${font Ubuntu:size=7}${color #717c75} NAME ${goto 140} CPU%   ${goto 180}MEM%${goto 250}${font Ubuntu:size=7}  PID
 ${font Ubuntu:size=7}
-${goto 15} ${color #9baaa0}${top name 1}    ${goto 140}${top cpu 1}    ${goto 180}${top mem 1}    ${goto 220}${top pid 1}
-${goto 15} ${color #9baaa0}${top name 2}    ${goto 140}${top cpu 2}    ${goto 180}${top mem 2}    ${goto 220}${top pid 2} 
-${goto 15} ${color #9baaa0}${top name 3}    ${goto 140}${top cpu 3}    ${goto 180}${top mem 3}    ${goto 220}${top pid 3}
-${goto 15} ${color #9baaa0}${top name 4}    ${goto 140}${top cpu 4}    ${goto 180}${top mem 4}    ${goto 220}${top pid 4}
-${goto 15} ${color #9baaa0}${top name 5}    ${goto 140}${top cpu 5}    ${goto 180}${top mem 5}    ${goto 220}${top pid 5}
-${goto 15} ${color #9baaa0}${top name 6}    ${goto 140}${top cpu 6}    ${goto 180}${top mem 6}    ${goto 220}${top pid 6}
+${goto 15} ${color #9baaa0}${top name 1}    ${goto 140}${top cpu 1}    ${goto 180}${top mem 1}    ${goto 250}${top pid 1}
+${goto 15} ${color #9baaa0}${top name 2}    ${goto 140}${top cpu 2}    ${goto 180}${top mem 2}    ${goto 250}${top pid 2} 
+${goto 15} ${color #9baaa0}${top name 3}    ${goto 140}${top cpu 3}    ${goto 180}${top mem 3}    ${goto 250}${top pid 3}
+${goto 15} ${color #9baaa0}${top name 4}    ${goto 140}${top cpu 4}    ${goto 180}${top mem 4}    ${goto 250}${top pid 4}
+${goto 15} ${color #9baaa0}${top name 5}    ${goto 140}${top cpu 5}    ${goto 180}${top mem 5}    ${goto 250}${top pid 5}
+${goto 15} ${color #9baaa0}${top name 6}    ${goto 140}${top cpu 6}    ${goto 180}${top mem 6}    ${goto 250}${top pid 6}
 
 # - MEM  - #
-${goto 10} ${font Ubuntu:size=7}${color #717c75} NAME     ${goto 140} CPU%  ${goto 180}${font Sans:size=7}MEM%${goto 220}${font Ubuntu:size=7}  PID
+${goto 10} ${font Ubuntu:size=7}${color #717c75} NAME     ${goto 140} CPU%  ${goto 180}${font Sans:size=7}MEM%${goto 250}${font Ubuntu:size=7}  PID
 ${font Ubuntu:size=7}
-${goto 15} ${color #9baaa0}${top_mem name 1}    ${goto 140}${top_mem cpu 1}    ${goto 180}${top_mem mem 1}    ${goto 220}${top_mem pid 1}
-${goto 15} ${color #9baaa0}${top_mem name 2}    ${goto 140}${top_mem cpu 2}    ${goto 180}${top_mem mem 2}    ${goto 220}${top_mem pid 2}
-${goto 15} ${color #9baaa0}${top_mem name 3}    ${goto 140}${top_mem cpu 3}    ${goto 180}${top_mem mem 3}    ${goto 220}${top_mem pid 3}
-${goto 15} ${color #9baaa0}${top_mem name 4}    ${goto 140}${top_mem cpu 4}    ${goto 180}${top_mem mem 4}    ${goto 220}${top_mem pid 4}
-${goto 15} ${color #9baaa0}${top_mem name 5}    ${goto 140}${top_mem cpu 5}    ${goto 180}${top_mem mem 5}    ${goto 220}${top_mem pid 5}
-${goto 15} ${color #9baaa0}${top_mem name 6}    ${goto 140}${top_mem cpu 6}    ${goto 180}${top_mem mem 6}    ${goto 220}${top_mem pid 6}
+${goto 15} ${color #9baaa0}${top_mem name 1}    ${goto 140}${top_mem cpu 1}    ${goto 180}${top_mem mem 1}    ${goto 250}${top_mem pid 1}
+${goto 15} ${color #9baaa0}${top_mem name 2}    ${goto 140}${top_mem cpu 2}    ${goto 180}${top_mem mem 2}    ${goto 250}${top_mem pid 2}
+${goto 15} ${color #9baaa0}${top_mem name 3}    ${goto 140}${top_mem cpu 3}    ${goto 180}${top_mem mem 3}    ${goto 250}${top_mem pid 3}
+${goto 15} ${color #9baaa0}${top_mem name 4}    ${goto 140}${top_mem cpu 4}    ${goto 180}${top_mem mem 4}    ${goto 250}${top_mem pid 4}
+${goto 15} ${color #9baaa0}${top_mem name 5}    ${goto 140}${top_mem cpu 5}    ${goto 180}${top_mem mem 5}    ${goto 250}${top_mem pid 5}
+${goto 15} ${color #9baaa0}${top_mem name 6}    ${goto 140}${top_mem cpu 6}    ${goto 180}${top_mem mem 6}    ${goto 250}${top_mem pid 6}
 ${font Ubuntu:size=8}
 ${voffset 100}${goto 10}WINDOWS
 
@@ -79,7 +89,7 @@ ${voffset 3}${goto 15}Win+Down  ${goto 75}: ${goto 100} Unmaximize
 ${goto 10}APPLICATIONS
 
 ${goto 15}Alt + F  ${goto 75}: ${goto 100} Web Browser (Firefox)
-${voffset 3}${goto 15}Alt + G  ${goto 75}: ${goto 100} Web Browser (Chromium)
+${voffset 3}${goto 15}Alt + V  ${goto 75}: ${goto 100} Web Browser (Vivaldi)
 ${voffset 3}${goto 15}Alt + I  ${goto 75}: ${goto 100} \#IRC
 ${voffset 3}${goto 15}Alt + N  ${goto 75}: ${goto 100} File Manager
 ${voffset 3}${goto 15}Alt + P  ${goto 75}: ${goto 100} Popcorn Time
