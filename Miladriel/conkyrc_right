@@ -91,7 +91,7 @@ ${goto 100}$mpd_status $mpd_elapsed/$mpd_length
 
 ${goto 30}${mpd_bar 4,220}
 ${font Ubuntu:size=8}
-${voffset 150}${goto 150}TODO LIST
+${voffset 100}${goto 150}TODO LIST
 
 ${voffset 3}${goto 150}Java tutorial
 ${voffset 3}${goto 150}Python tutorial
