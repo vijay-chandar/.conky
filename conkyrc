@@ -1,0 +1,125 @@
+######################
+# - Conky settings - #
+######################
+update_interval 1
+total_run_times 0
+net_avg_samples 1
+cpu_avg_samples 1
+
+imlib_cache_size 0
+double_buffer yes
+no_buffers yes
+format_human_readable
+draw_graph_borders no
+
+#####################
+# - Text settings - #
+#####################
+use_xft yes
+xftfont Ubuntu:size=8
+override_utf8_locale yes
+text_buffer_size 2048
+
+#############################
+# - Window specifications - #
+#############################
+own_window yes
+own_window_argb_visual true
+own_window_argb_value 80
+own_window_transparent no
+own_window_color 000000
+own_window_type normal
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+alignment top_left
+gap_x 5
+gap_y 0
+minimum_size 210 1040
+maximum_width 500
+default_bar_size 230 0
+
+#############
+# - Graphics settings - #
+#############
+draw_shades no
+
+default_color 6D6D6D             
+
+TEXT
+# - Ethernet - #
+${color #717c75}${font Ubuntu:size=8}SYSTEM${goto 210}Infos
+${execbar}
+#${downspeedgraph enp2s0 30,90 9baaa0 9baaa0}${goto 140}${upspeedgraph enp2s0 30,90 9baaa0 9baaa0}
+#
+${voffset 3}${goto 30}${color #9baaa0}${font Ubuntu:size=7}Local${goto 120}|${goto 160}${addr enp2s0}
+${voffset 3}${goto 30}Host${goto 120}| ${goto 160}${nodename}
+${voffset 3}${goto 30}Kernel${goto 120}| ${goto 160}${kernel}
+${voffset 3}${goto 30}${uptime}${goto 120}| ${goto 160}${time  %A}
+
+
+${font Ubuntu:size=8}${color #717c75}CPU: ${color #9baaa0}${cpu}%${color #717c75}${goto 210}Infos
+${execbar}
+${color #9baaa0}${hwmon temp 1} °C${goto 185}$freq_g GHZ${color #717c75}
+${voffset 10}${cpugraph cpu0 40,220 9baaa0 9baaa0}
+
+${color #717c75}${font Ubuntu:size=8}GPU${goto 210}Infos
+${execbar}${color #9baaa0}
+${voffset 10}${execi 1000 lspci | grep VGA | awk '{print $8,$9,$10,$11}' | cut -f2 -d"[" | cut -f1 -d"]"} ${goto 150}${nvidia gpufreq} Mhz
+Memory: ${goto 150}${nvidia memfreq} Mhz
+Temp: ${goto 150}${nvidia temp} °C
+Fan Speed: ${goto 150}${execi 5 nvidia-settings -q [fan:0]/GPUCurrentFanSpeed -t} %
+
+${color #717c75}${font Ubuntu:size=8}Mem: ${color #9baaa0}${mem}
+${execbar}
+${voffset 10}${memgraph 40,220 9baaa0 9baaa0}
+
+${voffset 10}${color #717c75}${font Ubuntu:size=8}PROCESSES${goto 185}Top usage${font}
+${execbar}
+
+# - CPU  - #
+${goto 10} ${font Ubuntu:size=7}${color #717c75} NAME ${goto 100} CPU%   ${goto 140}MEM%${goto 200}${font Ubuntu:size=7}  PID
+${font Ubuntu:size=7}
+${goto 15} ${color #9baaa0}${top name 1}    ${goto 100}${top cpu 1}    ${goto 140}${top mem 1}    ${goto 200}${top pid 1}
+${goto 15} ${color #9baaa0}${top name 2}    ${goto 100}${top cpu 2}    ${goto 140}${top mem 2}    ${goto 200}${top pid 2} 
+${goto 15} ${color #9baaa0}${top name 3}    ${goto 100}${top cpu 3}    ${goto 140}${top mem 3}    ${goto 200}${top pid 3}
+${goto 15} ${color #9baaa0}${top name 4}    ${goto 100}${top cpu 4}    ${goto 140}${top mem 4}    ${goto 200}${top pid 4}
+${goto 15} ${color #9baaa0}${top name 5}    ${goto 100}${top cpu 5}    ${goto 140}${top mem 5}    ${goto 200}${top pid 5}
+${goto 15} ${color #9baaa0}${top name 6}    ${goto 100}${top cpu 6}    ${goto 140}${top mem 6}    ${goto 200}${top pid 6}
+
+# - MEM  - #
+${goto 10} ${font Ubuntu:size=7}${color #717c75} NAME     ${goto 100} CPU%  ${goto 140}${font Sans:size=7}MEM%${goto 200}${font Ubuntu:size=7}  PID
+${font Ubuntu:size=7}
+${goto 15} ${color #9baaa0}${top_mem name 1}    ${goto 100}${top_mem cpu 1}    ${goto 140}${top_mem mem 1}    ${goto 200}${top_mem pid 1}
+${goto 15} ${color #9baaa0}${top_mem name 2}    ${goto 100}${top_mem cpu 2}    ${goto 140}${top_mem mem 2}    ${goto 200}${top_mem pid 2}
+${goto 15} ${color #9baaa0}${top_mem name 3}    ${goto 100}${top_mem cpu 3}    ${goto 140}${top_mem mem 3}    ${goto 200}${top_mem pid 3}
+${goto 15} ${color #9baaa0}${top_mem name 4}    ${goto 100}${top_mem cpu 4}    ${goto 140}${top_mem mem 4}    ${goto 200}${top_mem pid 4}
+${goto 15} ${color #9baaa0}${top_mem name 5}    ${goto 100}${top_mem cpu 5}    ${goto 140}${top_mem mem 5}    ${goto 200}${top_mem pid 5}
+${goto 15} ${color #9baaa0}${top_mem name 6}    ${goto 100}${top_mem cpu 6}    ${goto 140}${top_mem mem 6}    ${goto 200}${top_mem pid 6}
+
+${color #717c75}${font Ubuntu:size=8}MPD${goto 170}Now Playing${font}
+${execbar}
+${if_running mpd}
+$mpd_artist
+$mpd_title
+$mpd_album
+Bitrate $mpd_bitrate kbits/s
+
+${goto 10}$mpd_status $mpd_elapsed/$mpd_length
+
+${goto 10}${mpd_bar 4,200}
+
+
+
+
+
+${font Ubuntu:size=8}
+${color #717c75}${font Ubuntu:size=8}WINDOWS${goto 185}Shortcuts${font}
+${execbar}
+
+${goto 15}Alt + F  ${goto 75}: ${goto 100} Web Browser (Firefox)
+${voffset 3}${goto 15}Alt + I  ${goto 75}: ${goto 100} \#IRC
+${voffset 3}${goto 15}Alt + N  ${goto 75}: ${goto 100} File Manager
+${voffset 3}${goto 15}Alt + P  ${goto 75}: ${goto 100} Popcorn Time
+${voffset 3}${goto 15}Alt + T  ${goto 75}: ${goto 100} Television
+
+${voffset 3}${goto 15}SUPER  ${goto 75}: ${goto 100} Launcher (Krunner)
