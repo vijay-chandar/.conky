@@ -34,7 +34,7 @@ own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 alignment top_left
 gap_x 5
 gap_y 0
-minimum_size 210 1040
+minimum_size 210 1080
 maximum_width 500
 default_bar_size 230 0
 
@@ -99,18 +99,14 @@ ${goto 15} ${color #9baaa0}${top_mem name 6}    ${goto 100}${top_mem cpu 6}    $
 ${color #717c75}${font Ubuntu:size=8}MPD${goto 170}Now Playing${font}
 ${execbar}
 ${if_running mpd}
-$mpd_artist
-$mpd_title
-$mpd_album
-Bitrate $mpd_bitrate kbits/s
+${alignc}$mpd_artist
+${alignc}$mpd_title
+${alignc}$mpd_album
+${alignc}Bitrate $mpd_bitrate kbits/s
 
-${goto 10}$mpd_status $mpd_elapsed/$mpd_length
+${alignc}$mpd_status $mpd_elapsed/$mpd_length
 
-${goto 10}${mpd_bar 4,200}
-
-
-
-
+${alignc}${mpd_bar 4,200}
 
 ${font Ubuntu:size=8}
 ${color #717c75}${font Ubuntu:size=8}WINDOWS${goto 185}Shortcuts${font}
@@ -120,6 +116,6 @@ ${goto 15}Alt + F  ${goto 75}: ${goto 100} Web Browser (Firefox)
 ${voffset 3}${goto 15}Alt + I  ${goto 75}: ${goto 100} \#IRC
 ${voffset 3}${goto 15}Alt + N  ${goto 75}: ${goto 100} File Manager
 ${voffset 3}${goto 15}Alt + P  ${goto 75}: ${goto 100} Popcorn Time
-${voffset 3}${goto 15}Alt + T  ${goto 75}: ${goto 100} Television
+${voffset 3}${goto 15}Alt + T  ${goto 75}: ${goto 100} Jupiter Broadcasting
 
-${voffset 3}${goto 15}SUPER  ${goto 75}: ${goto 100} Launcher (Krunner)
+${voffset 3}${goto 15}SUPER  ${goto 75}: ${goto 100} Launcher
